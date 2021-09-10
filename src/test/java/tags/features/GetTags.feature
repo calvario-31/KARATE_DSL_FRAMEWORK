@@ -1,4 +1,5 @@
 Feature: Get all tags
+
   Background:
     * def responseSchema = read('classpath:tags/schema/tags.json')
 

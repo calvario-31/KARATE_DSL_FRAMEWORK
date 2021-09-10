@@ -1,4 +1,5 @@
 Feature: Get user info
+
   Background:
     * def loginApi = callonce read('classpath:users/features/Login.feature')
     * def token = loginApi.response.user.token

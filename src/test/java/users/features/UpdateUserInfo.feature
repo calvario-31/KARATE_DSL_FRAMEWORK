@@ -1,4 +1,5 @@
 Feature: Update user info
+
   Background:
     * def responseSchema = read('classpath:users/schema/userAuth.json')
     * def loginApi = callonce read('classpath:users/features/Login.feature')

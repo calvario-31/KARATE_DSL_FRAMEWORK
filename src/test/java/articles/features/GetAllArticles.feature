@@ -1,9 +1,9 @@
 Feature: Get all articles
+
   Background:
     * def responseSchema = read('classpath:articles/schema/article.json')
 
     Given url apiUrl
-    #And header token = 'Token :' + token
 
   Scenario: Get all articles GET method
     Given path 'articles'

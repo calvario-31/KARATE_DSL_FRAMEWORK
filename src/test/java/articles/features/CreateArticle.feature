@@ -1,4 +1,5 @@
 Feature: Get all articles
+
   Background:
     Given url apiUrl
 
