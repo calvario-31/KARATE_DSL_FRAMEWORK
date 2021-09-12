@@ -1,17 +1,19 @@
-Feature: Create article
+Feature: Update Article
 
   Background:
     * def bodyJson = Java.type('articles.faker.DataGenerator').generateNewArticle()
+
     * def responseSchema = read('classpath:articles/schema/article.json')
+
+    * def createArticleApi = callonce read('CreateArticle.feature')
+    * def slug = createArticleApi.slug
 
     Given url apiUrl
     And header Authorization = 'Token ' + token
 
-  Scenario: Create an article POST method
-    Given path 'articles'
+  Scenario:
+    Given path 'articles', slug
     And request bodyJson
-    When method POST
+    When method PUT
     Then status 200
-    And assert responseTime < 1200
     And match response.article == responseSchema
-    * def slug = response.article.slug

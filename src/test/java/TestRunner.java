@@ -12,18 +12,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestRunner {
-    @Test
-    public void testParallel() {
-        Results results = com.intuit.karate.Runner.path("classpath:")
-                .tags("~@ignore",
-                        "~@helpers")
-                .outputCucumberJson(true)
-                .parallel(3);
-        generateReport(results.getReportDir());
-
-        assertEquals(0, results.getFailCount(), results.getErrorMessages());
-    }
-
     public static void generateReport(String karateOutputPath) {
         Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[]{"json"}, true);
         List<String> jsonPaths = new ArrayList<>(jsonFiles.size());
@@ -31,5 +19,16 @@ public class TestRunner {
         Configuration config = new Configuration(new File("target"), "Karate Framework");
         ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
         reportBuilder.generateReports();
+    }
+
+    @Test
+    public void testParallel() {
+        Results results = com.intuit.karate.Runner.path("classpath:")
+                .tags("~@ignore")
+                .outputCucumberJson(true)
+                .parallel(3);
+        generateReport(results.getReportDir());
+
+        assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
 }

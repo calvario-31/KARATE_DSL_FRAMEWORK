@@ -1,14 +1,12 @@
 function fn() {
-  var config = {
-    apiUrl: "https://conduit.productionready.io/api",
-  };
+    var config = {
+        apiUrl: "https://conduit.productionready.io/api"
+    };
 
- /* karate.callSingle('classpath:ping/features/HealthCheck.feature', config)
-  var accessToken = karate.callSingle('classpath:auth/features/Login.feature', config).token
+    var result = karate.callSingle('classpath:users/features/Register.feature', config)
+    config.token = result.token
+    karate.configure('headers', {'Content-Type': 'application/json'})
+    karate.configure('headers', {Accept: 'application/json'})
 
-  karate.configure('cookies', {'token': accessToken})*/
-  karate.configure('headers', {'Content-Type': 'application/json'})
-  karate.configure('headers', {Accept: 'application/json'})
-
-  return config;
+    return config;
 }

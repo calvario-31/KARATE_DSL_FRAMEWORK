@@ -6,6 +6,7 @@ Feature: Register
 
     Given url apiUrl
 
+  @helpers
   Scenario: Register POST api
     Given path 'users'
     And request bodyJson
@@ -13,4 +14,5 @@ Feature: Register
     Then status 200
     And assert responseTime < 1200
     And match response == responseSchema
+    * def token = response.user.token
 
