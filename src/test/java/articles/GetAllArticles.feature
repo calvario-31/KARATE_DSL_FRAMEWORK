@@ -5,6 +5,8 @@ Feature: Get all articles
 
     Given url apiUrl
 
+  @regression
+  @smoke
   Scenario: Get all articles GET method
     Given path 'articles'
     When method GET

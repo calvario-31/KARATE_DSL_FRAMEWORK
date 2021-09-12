@@ -7,6 +7,8 @@ Feature: Create article
     Given url apiUrl
     And header Authorization = 'Token ' + token
 
+  @regression
+  @smoke
   Scenario: Create an article POST method
     Given path 'articles'
     And request bodyJson

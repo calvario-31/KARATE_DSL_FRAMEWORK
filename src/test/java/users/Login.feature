@@ -9,6 +9,8 @@ Feature: login feature
 
     Given url apiUrl
 
+  @smoke
+  @regression
   Scenario: Login POST method
     Given path 'users', 'login'
     And request credentialsJson

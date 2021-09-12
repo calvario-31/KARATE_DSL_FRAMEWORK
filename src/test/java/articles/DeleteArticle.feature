@@ -7,6 +7,8 @@ Feature: Delete Article
     Given url apiUrl
     And header Authorization = 'Token ' + token
 
+  @regression
+  @smoke
   Scenario:
     Given path 'articles', slug
     When method DELETE

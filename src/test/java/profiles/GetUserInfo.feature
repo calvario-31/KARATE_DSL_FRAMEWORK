@@ -6,6 +6,7 @@ Feature: Get user info
     Given url apiUrl
     And header Authorization = 'Token ' + token
 
+  @regression
   Scenario:
     Given path 'profiles', username
     When method GET

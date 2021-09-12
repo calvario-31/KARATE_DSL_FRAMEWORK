@@ -8,6 +8,7 @@ Feature: Unfavorite Article
     Given url apiUrl
     And header Authorization = 'Token ' +  token
 
+  @regression
   Scenario:
     Given path 'articles', slug, 'favorite'
     When method DELETE

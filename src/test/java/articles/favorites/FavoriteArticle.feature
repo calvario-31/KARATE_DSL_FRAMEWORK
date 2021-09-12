@@ -8,6 +8,8 @@ Feature: Favorite Article
     Given url apiUrl
     And header Authorization = 'Token ' +  token
 
+  @smoke
+  @regression
   Scenario:
     Given path 'articles', slug, 'favorite'
     When method POST

@@ -8,6 +8,8 @@ Feature: Unfollow user
     Given url apiUrl
     And header Authorization = 'Token ' + token
 
+  @regression
+  @smoke
   Scenario:
     Given path 'profiles', newUsername, 'follow'
     When method DELETE

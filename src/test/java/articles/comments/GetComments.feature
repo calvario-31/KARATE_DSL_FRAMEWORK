@@ -8,6 +8,8 @@ Feature: Get comment
     Given url apiUrl
     And header Authorization = 'Token ' + token
 
+  @smoke
+  @regression
   Scenario:
     Given path 'articles', slug, 'comments'
     When method GET

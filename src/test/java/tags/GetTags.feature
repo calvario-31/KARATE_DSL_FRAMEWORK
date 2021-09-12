@@ -3,6 +3,7 @@ Feature: Get all tags
   Background:
     Given url apiUrl
 
+  @regression
   Scenario: Get all tags GET method
     Given path 'tags'
     When method GET

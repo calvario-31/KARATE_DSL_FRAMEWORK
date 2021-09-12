@@ -8,7 +8,7 @@ Feature: Update user info
     Given url apiUrl
     And header Authorization = 'Token ' + token
 
-  @debug
+  @regression
   Scenario:
     Given path 'user'
     And request bodyJson

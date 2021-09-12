@@ -11,6 +11,7 @@ Feature: Update Article
     Given url apiUrl
     And header Authorization = 'Token ' + token
 
+  @regression
   Scenario:
     Given path 'articles', slug
     And request bodyJson

@@ -7,7 +7,7 @@ Feature: Register
 
     Given url apiUrl
 
-  @helpers
+  @smoke
   Scenario: Register POST api
     Given path 'users'
     And request bodyJson
