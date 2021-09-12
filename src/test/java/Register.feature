@@ -1,8 +1,9 @@
 Feature: Register
 
   Background:
-    * def bodyJson = Java.type("users.faker.DataGenerator").generateNewUser()
-    * def responseSchema = read("classpath:users/schema/userAuth.json")
+    * def bodyJson = Java.type("DataGenerator").generateNewUser()
+
+    * def responseSchema = read("classpath:users/userAuthSchema.json")
 
     Given url apiUrl
 
@@ -15,5 +16,5 @@ Feature: Register
     And assert responseTime < 1200
     And match response == responseSchema
     * def token = response.user.token
-    * def username = response.user.username
+    * def credentials = bodyJson.user
 

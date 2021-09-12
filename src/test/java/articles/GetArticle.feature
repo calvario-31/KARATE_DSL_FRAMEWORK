@@ -4,7 +4,7 @@ Feature: Get Article
     * def createArticleApi = callonce read('CreateArticle.feature')
     * def slug = createArticleApi.slug
 
-    * def responseSchema = read('classpath:articles/schema/article.json')
+    * def responseSchema = read('articleSchema.json')
 
     Given url apiUrl
     And header Authorization = 'Token ' + token

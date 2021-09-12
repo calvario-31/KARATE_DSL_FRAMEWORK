@@ -1,9 +1,9 @@
 Feature: Follow user
   Background:
-    * def responseSchema = read('classpath:profiles/schema/profile.json')
+    * def registerApi = callonce read('classpath:Register.feature')
+    * def newUsername = registerApi.response.user.username
 
-    * def registerApi = callonce read('classpath:users/features/Register.feature')
-    * def newUsername = registerApi.username
+    * def responseSchema = read('../profileSchema.json')
 
     Given url apiUrl
     And header Authorization = 'Token ' + token

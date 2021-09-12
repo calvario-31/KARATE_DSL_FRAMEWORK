@@ -1,8 +1,9 @@
 Feature: Update user info
 
   Background:
-    * def responseSchema = read('classpath:users/schema/userAuth.json')
-    * def bodyJson = Java.type('users.faker.DataGenerator').generateUpdateUser()
+    * def bodyJson = Java.type('DataGenerator').generateUpdateUser()
+
+    * def responseSchema = read('userAuthSchema.json')
 
     Given url apiUrl
     And header Authorization = 'Token ' + token

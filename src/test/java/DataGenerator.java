@@ -1,15 +1,48 @@
-package users.faker;
-
 import com.github.javafaker.Faker;
 import net.minidev.json.JSONObject;
 
+import java.util.Locale;
+
 public class DataGenerator {
+    public static JSONObject generateNewComment() {
+        Faker faker = new Faker();
+        String body = faker.lorem().paragraph();
+
+        JSONObject commentData = new JSONObject();
+
+        commentData.put("body", body);
+
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("comment", commentData);
+
+        return jsonObject;
+    }
+
+    public static JSONObject generateNewArticle() {
+        Faker faker = new Faker();
+        String title = faker.lorem().sentence(3);
+        String description = faker.lorem().sentence(7);
+        String body = faker.lorem().paragraph();
+
+        JSONObject articleData = new JSONObject();
+
+        articleData.put("title", title);
+        articleData.put("description", description);
+        articleData.put("body", body);
+
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("article", articleData);
+
+        return jsonObject;
+    }
+
     public static JSONObject generateNewUser() {
         Faker faker = new Faker();
         String username = faker.lorem().word() + faker.random().nextInt(10, 99);
         String email = faker.internet().emailAddress();
-        String password = faker.animal().name() + faker.random().nextInt(10000, 50000);
-
+        String password = faker.random().nextInt(10000000, 99999999).toString();
 
         JSONObject userData = new JSONObject();
 
@@ -28,7 +61,7 @@ public class DataGenerator {
         Faker faker = new Faker();
         String username = faker.name().username() + faker.random().nextInt(20, 100);
         String email = faker.internet().emailAddress();
-        String password = faker.animal().name() + faker.random().nextInt(1000, 5000);
+        String password = faker.random().nextInt(10000000, 99999999).toString();
         String bio = faker.backToTheFuture().quote();
         String image = faker.internet().image();
 

@@ -1,7 +1,7 @@
 Feature: Get user info
 
   Background:
-    * def responseSchema = read('classpath:users/schema/userAuth.json')
+    * def responseSchema = read('userAuthSchema.json')
 
     Given url apiUrl
     And header Authorization = 'Token ' + token

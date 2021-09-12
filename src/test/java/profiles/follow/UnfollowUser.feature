@@ -1,9 +1,9 @@
 Feature: Unfollow user
   Background:
-    * def responseSchema = read('classpath:profiles/schema/profile.json')
-
     * def followUserApi = callonce read('FollowUser.feature')
     * def newUsername = followUserApi.newUsername
+
+    * def responseSchema = read('../profileSchema.json')
 
     Given url apiUrl
     And header Authorization = 'Token ' + token

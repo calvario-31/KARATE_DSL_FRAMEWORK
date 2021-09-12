@@ -1,7 +1,7 @@
 Feature: Get all articles
 
   Background:
-    * def responseSchema = read('classpath:articles/schema/article.json')
+    * def responseSchema = read('articleSchema.json')
 
     Given url apiUrl
 

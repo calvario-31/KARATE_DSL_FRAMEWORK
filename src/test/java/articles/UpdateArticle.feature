@@ -1,9 +1,9 @@
 Feature: Update Article
 
   Background:
-    * def bodyJson = Java.type('articles.faker.DataGenerator').generateNewArticle()
+    * def bodyJson = Java.type('DataGenerator').generateNewArticle()
 
-    * def responseSchema = read('classpath:articles/schema/article.json')
+    * def responseSchema = read('articleSchema.json')
 
     * def createArticleApi = callonce read('CreateArticle.feature')
     * def slug = createArticleApi.slug

@@ -1,6 +1,7 @@
 Feature: Get user info
   Background:
-    * def responseSchema = read('classpath:profiles/schema/profile.json')
+    * def responseSchema = read('profileSchema.json')
+    * def username = credentials.username
 
     Given url apiUrl
     And header Authorization = 'Token ' + token
