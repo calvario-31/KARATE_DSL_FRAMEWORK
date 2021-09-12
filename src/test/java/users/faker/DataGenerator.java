@@ -6,7 +6,7 @@ import net.minidev.json.JSONObject;
 public class DataGenerator {
     public static JSONObject generateNewUser() {
         Faker faker = new Faker();
-        String username = faker.name().username() + faker.random().nextInt(10, 99);
+        String username = faker.lorem().word() + faker.random().nextInt(10, 99);
         String email = faker.internet().emailAddress();
         String password = faker.animal().name() + faker.random().nextInt(10000, 50000);
 

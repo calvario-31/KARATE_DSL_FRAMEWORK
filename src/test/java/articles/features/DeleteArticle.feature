@@ -11,3 +11,4 @@ Feature: Delete Article
     Given path 'articles', slug
     When method DELETE
     Then status 200
+    And assert responseTime < 1200

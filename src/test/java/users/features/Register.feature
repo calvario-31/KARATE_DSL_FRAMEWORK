@@ -15,4 +15,5 @@ Feature: Register
     And assert responseTime < 1200
     And match response == responseSchema
     * def token = response.user.token
+    * def username = response.user.username
 

@@ -13,5 +13,5 @@ Feature: Get Article
     Given path 'articles', slug
     When method GET
     Then status 200
-    And match response == "#{}"
+    And assert responseTime < 1200
     And match response.article == responseSchema
